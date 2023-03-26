@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+            <h1 class="text-primary text-center mt-4">View your contact</h1>
+
+           
+
+            <p class="mt-2"style="text-align:justify">
+                Contact management is the process of storing and tracking data on customers and leads.
+In addition to providing quick access to customer data, investing in contact management can help
+ you grow and diversify your customer base.
+ Gone are the days of exchanging napkin notes and business cards.
+  In today’s fast-paced business world, it can be hard to remember every customer’s name and their individual  preferences.
+   That’s why it’s essential to store data electronically, share it with team members when needed and continuously gather information to successfully interact with clients and customers.
+
+
+            </p>
+
+        </div>
+    </div>
+
+    
+
+<div class="container">
+    <div class="row">
+
+      
+
+        <div class="col-4 mb-3">
+
+
+       <!-- string interpolation nadathee or data binding //complete data of contact {{contact | json}} edilunnd -->
+
+       <pre>
+        {{groupId | json}}
+       </pre>
+
+       <pre>
+        {{groupName | json}}
+       </pre>
+
+       <pre>
+        {{contactId | json}} 
+    </pre>
+
+
+            <pre>
+                {{contact | json}} 
+
+                <!-- complete data of contact -->
+            </pre>
+
+            <ul class="list-group mt-5">
+                <h1 class="mb-4">Contact Details</h1>
+             
+
+                
+                <!-- data  displayed in page now   dispalying inside card  by following way contact ne interpolate chayyunnu-->
+
+
+                <li class="list-group-item">Name:{{contact.name}}
+                    
+                  
+                 
+        
+        
+        
+                </li>
+                <li class="list-group-item">Email: {{contact.email}}
+                    
+                    
+              
+                
+                
+                </li>
+               
+                <li class="list-group-item">Mobile No: {{contact.phone}}</li>
+                <li class="list-group-item">Company Name: {{contact.company}} </li>
+                <li class="list-group-item">Title :{{contact.title}} </li>
+                <li class="list-group-item">Group : {{groupName}} </li>
+                
+
+
+
+                
+              </ul>
+
+              <!-- <!  mainpage '/' vech koduthuu  -- my-4 => indicates vertical 'y' distance from top and bottom space varum --> 
+
+              <a routerLink="/"  class="btn btn-dark btn-outline-primary my-3">Go back</a>
+        </div>
+        <div class="col-4">
+            <img class="img-icon ms-5" [src]="contact.photo">
+
+            <!-- or src="{{contact.photo}}" in case of string interpolation   for property binding write like this  [src]="contact.photo"-->
+
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+

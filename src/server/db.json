@@ -1,0 +1,78 @@
+{
+  "contacts": [
+    {
+      "id": "2",
+      "name": "Arun",
+      "email": "arun@gmail.com",
+      "phone": "8547156356",
+      "photo": "https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=839 ",
+      "company": "abc company",
+      "title": "Data Analyst",
+      "groupId": "2"
+    },
+    {
+      "id": "3",
+      "name": "Anu",
+      "email": "anu@gmail.com",
+      "phone": "8547567323",
+      "photo": "https://www2.deloitte.com/content/dam/insights/us/portraits/tanya-telford/TTelford.jpg   ",
+      "company": "abc company",
+      "title": "software developer",
+      "groupId": "1"
+    },
+    {
+      "id": "4",
+      "name": "Navas",
+      "email": "navas@gmail.com",
+      "phone": "8547233867",
+      "photo": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "company": "pqr company",
+      "title": "Design Engineer",
+      "groupId": "3"
+    },
+    {
+      "id": "6",
+      "name": "fenza",
+      "photo": "https://pixinvent.com/demo/vuexy-bootstrap-laravel-admin-template-old/demo-4/images/profile/user-uploads/user-04.jpg",
+      "email": "fenza@gmail.com",
+      "phone": "8547233867",
+      "company": "oracle",
+      "title": "manager",
+      "groupId": "2"
+    },
+    {
+      "id": "7",
+      "name": "treesa boban",
+      "photo": "https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHVzZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+      "email": "treesa@gmail.com",
+      "phone": "8547286306",
+      "company": "microsoft",
+      "title": "tester",
+      "groupId": "3"
+    },
+    {
+      "id": "1",
+      "name": "amal",
+      "photo": "https://xsgames.co/randomusers/assets/avatars/male/46.jpg",
+      "email": "amal@gmail.com",
+      "phone": "4567123423",
+      "company": "acer",
+      "title": "systemanalyst",
+      "groupId": "2"
+    }
+  ],
+  "group": [
+    {
+      "id": "1",
+      "name": "family"
+    },
+    {
+      "id": "2",
+      "name": "company"
+    },
+    {
+      "id": "3",
+      "name": "friends"
+    }
+  ]
+}

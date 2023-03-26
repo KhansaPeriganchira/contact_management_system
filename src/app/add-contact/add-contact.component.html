@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+            <h1 class="text-primary text-center mt-4">Add your contact</h1>
+
+           
+
+            <p class="mt-2"style="text-align:justify">
+                Contact management is the process of storing and tracking data on customers and leads.
+In addition to providing quick access to customer data, investing in contact management can help
+ you grow and diversify your customer base.
+ Gone are the days of exchanging napkin notes and business cards.
+  In today’s fast-paced business world, it can be hard to remember every customer’s name and their individual  preferences.
+   That’s why it’s essential to store data electronically, share it with team members when needed and continuously gather information to successfully interact with clients and customers.
+
+
+            </p>
+
+        </div>
+    </div>
+
+    <!-- form-->
+
+<div class="container">
+    <div class="row">
+
+         <!-- form-->
+       
+<!-- contactId,contactName enter chayyumbbo string interpolation nadathii appo html page varunnundd -->
+<!-- 
+         <pre>
+            {{contactId}} 
+         </pre>
+         <pre>
+            {{contactName}}
+         </pre> -->
+
+         <!-- {{contact | json}}  '| json' is written to display as json data -->
+
+<pre>
+   {{contact | json}} 
+</pre>
+
+        <div class="col-4 mb-3">
+
+            <form class="border border-2 rounded-5 p-4 bg-secondary">
+
+
+                <!-- Two way Data  Binding html page laan apply chayyunnad [(ngModel)] ="property_name" -->
+               <!-- condtions to apply ngModel inside input tag : form tag,input inside kodukka ,name enna attribute venamm -->
+
+<!-- alreday input ll koduthaa contactId replaced with   [(ngModel)]="contact.id"  contact.id & contactName replaces with contact.name   now html page this object will come: {
+  "id": "3",
+  "name": "anu"
+} -->
+
+                <input [(ngModel)]="contact.id" name="contactId" type="text" placeholder="Enter Contact Id" class="form-control mb-2">
+                <input [(ngModel)]="contact.name" name="contactName" type="text" placeholder="Enter Contact Name" class="form-control mb-2">
+               
+                <input [(ngModel)]="contact.photo" type="text"  name="contactphoto" placeholder="Enter Contact Photo url" class="form-control mb-2">
+                <input  [(ngModel)]="contact.email" type="text" name="contactemail" placeholder="Enter Contact Email " class="form-control mb-2 ">
+                <input [(ngModel)]="contact.phone" type="text" name="contactmobile" placeholder="Enter Contact Mobile" class="form-control mb-2 ">
+                <input [(ngModel)]="contact.company" type="text" name="contactcompany" placeholder="Enter Contact Company Name" class="form-control mb-2 ">
+                <input [(ngModel)]="contact.title" type="text" name="contacttitles" placeholder="Enter Contact Title" class="form-control mb-2 ">
+               
+                <select [(ngModel)]="contact.groupId" type="text" name="groupId" class="form-control">
+
+<!-- optionsil dummy datayaan nammukk api call ninnum data veendadd -->
+
+
+
+                    <option value="select">Select</option>
+
+
+                    <!--*ngFor="let group of allGroups  ,each one iterates to group param then taking id and name from there.... select inside data varuthuunuu string interpolation via  ,   evide id and grp name nammal sett chayyunnu -->
+
+                    <option value={{group.id}} *ngFor="let group of allGroups">{{group.name}}</option>
+                   
+                   </select>
+                    
+                   <!-- event create chayyunnu create btn function create chayya in angular onclick() illa click() maatrollu-->
+
+                  <input (click)="addContact()" type="button" value="create" class="btn btn-da rk btn-outline-primary mt-3">
+
+                   <!-- routerLink:  '/' is given here to return back to main page contact manager page -->
+
+                   <a routerLink="/" class="btn btn-dark btn-outline-primary mt-3" style="float:right">Close</a>
+            </form>
+        </div>
+        <!-- two way binding -->
+        <div class="col-4">
+            <img class="img-icon ms-5" [src]="contact.photo " alt="image">
+
+        </div> <!-- two way binding -->
+
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+

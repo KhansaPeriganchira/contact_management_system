@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{
+    font-family: 'PT Serif', serif;
+}
+
+.img-icon{
+
+    width:500px;
+    height:500px;
+}

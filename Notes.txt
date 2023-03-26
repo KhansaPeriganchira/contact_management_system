@@ -1,0 +1,251 @@
+                             
+                              Contact Management System
+
+..............................................................................................................
+
+
+                     Basic Commands
+
+        1 create a new project - ng new contact_app ,contact_app n-> project name
+        2 To Run a project - ng serve --open
+        3 Create a new compontent -  ng g c component_name
+        4 Create a service - ng g s service_name
+        5 Create a pipe - ng g p pipe_foldername/pipe_name
+
+
+
+
+..........     ..   .............................................................................................................
+    
+             Basic Building Blocks
+
+             1 node Module - used to add 3rd party libraries 
+             2 Component - To create html pages(html,css,ts)
+             3 selector  - Used to replace the html corresponding to the component
+             4  Services  - Reusable codes that can be shared between components(components thammil share chayyunna common data that type of data known as services)
+             5 Asynchrounous function rxjs
+             6 Dependency Injection - Data shared between two dependent class 
+             7 
+
+....................................................................................................................................................................
+
+                  Contact Management System
+
+                  1 Create a new project - ng new contact_app
+                  2 cd contact_app -> command to enter project folder (in terminal case) 
+                  3 code . (vs code run chayyyan)
+                  4 To Run a project - ng serve --open
+                  5 Install bootstrap ,fontawesome and google fontawesome
+
+                npm i bootstrap@5.3.0-alpha1    
+
+
+                Commands to npm install bootstrap,fontawesome  
+
+                ............. npm i bootstrap .................
+
+
+               ......... npm i @fortawesome/fontawesome-free............
+                
+
+                6. configure bootstrap,fontawesome and google font in Angular.json file
+
+                         "styles": [
+                                      "src/styles.css",
+                                        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                                        "node_modules/@fortawesome/fontawesome-free/css/all.css"
+                                    ],
+            
+                          "scripts": [
+                                          "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+                                     ]
+
+
+
+
+                    // Also along with configure ,,, paste bootstrap , fontawesome ,google fonts cdn link in head tag of index.html file //
+
+
+
+
+                7. create components
+                   ->contactManager - To view all contacts
+                 
+                 ng g c component_name
+
+
+                ng g c contactManager 
+
+                   ->addContact - To add new Contact
+               ng g c addContact 
+
+                   ->updateContact - To update a contact
+                ng g c updateContact
+
+                   ->viewContact - To view particular contact
+                     ng g c viewContact 
+
+                    -> Page not found
+                    -> Navigation bar ng g c navbar 
+                    ->contactManager  - page design
+
+                    ->viewpage design
+                    ->update page design
+                    ->addpage design
+
+
+                    8.  API  creation
+                          
+                          create our own json file
+                          go to jsonplaceholder site - create My json server
+
+                    9. create folder for backend like in frontend
+                         create server folder inside the project created - src/server folder
+                         db.json(we have to create json data)
+                         create db.json file in server folder  - src/server folder/db.json
+                         add our own content to the db.json file   
+
+                    10.  In server folder create package.json and node modules ( those in front end  )
+                      in server path,cd src ,cd server,npm init
+
+                           ->create package.json file (store 3rd party libraries)- npm init     
+                           ->create json server - npm i json-server (nammude data json data aayitt varaan)
+                           ->npm start (error occurs) to resolve error, fix by
+
+                           update package.json.file script as (work aavann port:3000 emgane kodukkanam)
+                           "scripts": {
+                                 "start": "json-server --watch db.json --port 3000"
+                                   },
+
+                           ->npm start    
+                           
+                     11.    Create  Model for contact and group   
+                            create model folder in src folder
+                            create myContact.ts file (file for contact)
+                            create myGroup.ts file
+
+                     12.  To fetch data - Asynchrounous Resolving(callback ulladu konddu asynchronous aayadd)    
+                               JS                                                                                 TS
+                               promise                           // in ts(type script) instead of promise we use //          observable(basic building block of rxsjs library)
+                               fetch('url')                                                                    rxjs  library         
+                               .then()//fetch ll ninnu varunna data .then parannu kodukkum(what do next )   .............. subscribe()
+                              // fetch & then come under promise//
+                  
+                     
+                      13. APIs creation 
+                               eg:view contact  
+                                      update contact    
+
+                      14. service creation (to communicate independent componets each other)                
+                           pass data from one component to another
+                           If components share same data then we create service (need service)(redundant data commom file store chayyummu services folder)
+
+(api veendaa services folder create chayyunnu)
+
+                           ng g s services/api
+
+
+                     15. To get http methods - get ,post,put,patch(update chayyan),delete
+                           import HttpClientModule in app.module.ts
+
+                     16.  Dependency Inject httpClient in API services   
+
+                  API service inside   dependency injection api leek httpclient ne inject chaydu  
+
+                  17.  (array of data engane pass chayyuga/single data pass chayyuga html page of component)
+
+                      Data Binding(html and ts file each other data sharing  ,2 types: one way /two way sharing aavaaam)
+                      Data sharing inside a component
+
+                      component 2 files
+
+                      Html(view) -> ts(component) or  data sharing take place from component to view
+                      ts(component)  -> html(view) 
+
+                     1)one way data binding first category
+
+                         a)component to view(ts->html)
+      
+                                 i)String Interpolation - syntax: {{variable_name}} (how string interpolation works) 
+
+                                 ii) Property binding - syntax: [attribute]="property_name" 
+
+                                 project inside  property binding use chayyumbbo vere kaaryangalum use chayyan undd ie directives
+
+                          b)view(html) to component(ts) // how data passing take place ,what are the methods included
+                                 
+                                  i)Event Binding - (event)="function_name" -> this will give in html page & funtion defined in ts file
+                                         eg;textboxil type chayyumbbo event varanam that case eg:
+
+                                  ii)Event Binding using $event - (event)="function_name($event)"       //here we passing event as parameter  pass chayyunnd
+
+                          2)Two way Data  Binding
+                                
+                                i)ngModel  // this is a method 
+                                          -import FormsModule in appModule 
+                                          - syntax : [(ngModel)] ="property_name"
+
+
+
+
+
+
+
+
+                  18. Directives - To manipulate DOM (html page content change chayyanam)              
+                            
+                                1)Component directives() (component use chaydittu html contents display chayyan saadikkum)
+
+                                2)Structural directives (normal  conditional statements : if, loops)
+
+                                       - To add or remove html elements based on some conditions
+                                              
+
+                                              normal if in angular written as *ngIf
+
+                                               i)*ngIf="conditions"
+
+                                                  var_name or 'i' kodukkaaam for loop 
+
+                                               ii)*ngFor="let var_name of array_name"
+
+
+                                               next ->array of data ne main page display chayyippikkunnu using *ngFor
+
+
+
+
+               19. Activated Route angular le @angular/router classann Activated Route  //class// - in this project it is used in viewContact - to pass id to the url
+
+       Provides access to information about a route associated with a component that is loaded in an outlet.
+       Use to traverse the RouterState tree and extract information from nodes
+
+
+               params	Observable<Params>	//Activated Route enna class il unddavunna method aannn params
+          An observable of the matrix parameters scoped to this route.
+
+
+
+
+          20. To do searching in angular we need pipes
+          
+               Angular Pipes - To transforming data from one format to another  using Pipes
+                
+                Use pipes to transform strings, currency amounts, dates, and other data for display. 
+                 Pipes are simple functions to use in template expressions to accept an input value and return a transformed value.
+                  Pipes are useful because you can use them throughout your application, while only declaring each pipe once. 
+
+
+                eg; //for search we create a pipe self     
+                
+                pipe
+
+                create a pipe for searching
+
+                   syntax:  ng g p pipe_foldername/pipe_name
+
+                            ng g p pipes/filter
+
+                            copy this and paste (ctrl c) commandprompt where angular currently running  ng g p pipes/filter run it.(to create a pipe)
+
+         

@@ -1,0 +1,159 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<!-- system date and time    medium length   aayittu date varaan  date:medium koduthuu-->
+
+<p class="mt-3 mx-5 text-danger">Login Details: {{loginDate | date:'medium'}}</p>
+
+<body style="background-color: rgb(127, 236, 255);">
+    <div class="container">
+        <div class="row">
+            <div class="col  text-center ">
+                <h1 class="text-primary  mt-4">Contact Management System</h1>
+
+
+
+
+
+                <p class="mt-3" style="text-align:justify">
+                    Contact management is the process of storing and tracking data on customers and leads.
+                    In addition to providing quick access to customer data, investing in contact management can help
+                    you grow and diversify your customer base.
+                    Gone are the days of exchanging napkin notes and business cards.
+                    In today’s fast-paced business world, it can be hard to remember every customer’s name and their
+                    individual preferences.
+                    That’s why it’s essential to store data electronically, share it with team members when needed and
+                    continuously gather information to successfully interact with clients and customers.
+                     
+
+                </p>
+
+                <!-- btn click chayyumboo addcontact page leek kk poovanam adinu btn create chaydu -->
+
+                <a routerLink="/contact/add" class="btn btn-dark btn-outline-primary" style="float:right;"> <i
+                        class="fa-sharp fa-solid fa-user-plus"></i> add</a>
+
+            </div>
+        </div>
+
+        <!-- search bar and button -->
+
+        <div class="row">
+            <div class="col-6">
+
+                <!--Event Binding - (event)="function_name" html file Event Binding event kodukkunnu (change)="nameChange()"   syntax:(event) ="function_name" replace it with another event-->
+
+                <!-- Event Binding using $event - (event)="function_name($event)"  eg::  (keyup)="search($event)" keyup event kodukkumboo ooroonnayittan varuga event pass chayyunnd -->
+
+                <input  (change)="search($event)" class="form-control  " type="text" placeholder="Search Your Contacts">
+
+
+            </div>
+            <div class="col-6">
+                <button class="btn btn-dark btn-outline-primary"> <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    Search</button>
+
+            </div>
+        </div>
+        <!-- 
+variable allContacts in ts ne evide parrannu koduthu ........ string Interpolation via data html page ll pass chaydu
+  '| json ' straiaght line koduthu json data aayittu kittan -- json data print chayyippichu>..!> -->
+
+
+        <!-- <pre class="mt-3 text-danger fs-5">
+    {{heading}}
+</pre>
+
+<pre>
+    {{allContacts | json}}
+</pre> -->
+
+
+
+
+
+
+        <!-- <-- card designing -->
+
+    <div class="container">
+        <div class="row">
+            
+            <!-- column size responsive aayittu kittan adjust chaydu col-md-6 -->
+
+            <div class=" col-md-6" *ngFor="let contact of allContacts | filter: searchKey:'name'">
+
+                <div class="card mt-3 mb-3">
+                    <div class="card-body bg-secondary  p-4 ">
+                        <div class="row">
+                            <div class="col-4">
+
+                                <!-- image nagath property binding attribute lann apply chayya chayyunnu  contact.photo(contact ennadilee photo enna variable lee veendadd .photo) kodukka-->
+
+                                <img class="mt-3" [src]="contact.photo"
+                                    style="height:180px;width:160px;border-radius: 50%;" alt="image">
+                            </div>
+
+                            <div class="col-8">
+                                <ul class="list-group mt-5">
+                                    <li class="list-group-item">Name: {{contact.name}}
+                                    
+                                        <!-- View    '/'  place first here because it says that start from main page  -->
+
+                                        <!-- view chayyumbbo corresponding id pass chayyan that person details kittanam {{contact.id}} kodutha id pass aavum -->
+
+                                        <a routerLink="/contact/view/{{contact.id}}" style="float: right;"> <i
+                                                class="fa-sharp fa-solid fa-eye text-primary"></i> </a>
+
+                                    </li>
+
+                                    <li class="list-group-item">Email: {{contact.email}}
+
+
+                                        <!-- Edit -->
+                                             <!-- updayt chayyendda id pass chayduu -->
+
+                                        <a routerLink="/contact/update/{{contact.id}}" style="float: right;"> <i
+                                                class="fa-sharp fa-regular fa-pen-to-square text-primary"></i></a>
+
+                                    </li>
+                                    <li class="list-group-item">Mobile no: {{contact.phone}}
+
+
+                                        <!-- Delete -->
+
+                                        <button (click)="deleteContact(contact.id)"class="btn text-danger" style="float:right"><i
+                                                class="fa-sharp fa-solid fa-user-xmark text-primary "></i></button>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+
+            </div>
+        </div>
+
+    
+
+
+    </div>
+
+    </div>
+
+</body>
+
+
+
+</html>
